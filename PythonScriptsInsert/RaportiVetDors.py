@@ -1,0 +1,152 @@
+import random
+
+# DorezimiVeturesNgaKlienti
+# Replace these with your actual data from the PagesaQerasVetures and Vetura tables
+DorezimiVeturesNgaKlienti = [
+    (1, 1, 110623),
+    (2, 2, 145939),
+    (3, 3, 173480),
+    (4, 4, 153645),
+    (5, 5, 178498),
+    (6, 6, 119208),
+    (7, 7, 110623),
+    (8, 8, 178498),
+    (9, 9, 147610),
+    (10, 10, 184030),
+    (11, 11, 188940),
+    (12, 12, 137841),
+    (13, 13, 109497),
+    (14, 14, 182380),
+    (15, 15, 140193),
+    (16, 16, 119208),
+    (17, 17, 172077),
+    (18, 18, 162061),
+    (19, 19, 172077),
+    (20, 20, 197676),
+    (21, 21, 182380),
+    (22, 22, 109497),
+    (23, 23, 153645),
+    (24, 24, 162061),
+    (25, 25, 123324),
+    (26, 26, 109497),
+    (27, 27, 114538),
+    (28, 28, 109497),
+    (29, 29, 153645),
+    (30, 30, 153645),
+    (31, 31, 175761),
+    (32, 32, 109497),
+    (33, 33, 154422),
+    (34, 34, 137841),
+    (35, 35, 116380),
+    (36, 36, 188940),
+    (37, 37, 172077),
+    (38, 38, 106829),
+    (39, 39, 141482),
+    (40, 40, 162061),
+    (41, 41, 173480),
+    (42, 42, 172077),
+    (43, 43, 171247),
+    (44, 44, 154422),
+    (45, 45, 199478),
+    (46, 46, 169727),
+    (47, 47, 169727),
+    (48, 48, 140193),
+    (49, 49, 169727),
+    (50, 50, 154422),
+    (51, 51, 127253),
+    (52, 52, 127322),
+    (53, 53, 127253),
+    (54, 54, 199478),
+    (55, 55, 195996),
+    (56, 56, 127253),
+    (57, 57, 172077),
+    (58, 58, 172077),
+    (59, 59, 137841),
+    (60, 60, 161773),
+    (61, 61, 116380),
+    (62, 62, 114538),
+    (63, 63, 184030),
+    (64, 64, 162061),
+    (65, 65, 154422),
+    (66, 66, 138418),
+    (67, 67, 127253),
+    (68, 68, 169727),
+    (69, 69, 162061),
+    (70, 70, 192360)
+]
+
+RaportetEgzaminuseLista = [
+'The oil level in the car was found to be within the recommended range and the oil filter was in good condition. The engine is running smoothly.',
+'The brakes on the car were found to be in good condition and the brake fluid was clean. The brake pads have plenty of life left and the brake lines are clear.',
+'The tire pressure on the car was found to be within the recommended range and the tires are in good condition with plenty of tread. The wheels are also properly aligned.',
+'The catalytic converter in the car was functioning properly and met all emission standards. The converter is in good condition and operating efficiently.',
+'The spare tire in the car was found to be in good condition and properly inflated. All of the other tires on the car were also in good condition with plenty of tread.',
+'The transmission fluid in the car was found to be at the proper level and clean. The transmission is shifting smoothly.',
+'The radiator in the car was found to be in good condition and properly cooled the engine. The cooling system is functioning as designed.',
+'The battery in the car was found to be fully charged and in good condition. The battery cables are clean and properly connected.',
+'The air conditioning system in the car was found to be in good condition and cooling the interior effectively. The system is functioning as designed.',
+'The fuel pump in the car was found to be in good condition and delivering fuel to the engine effectively. The fuel system is functioning as designed.',
+'The oil level in the car was found to be low and the oil filter was clogged. The oil change interval was not followed and the engine was damaged as a result.',
+'The brakes on the car were found to be severely worn and the brake fluid was contaminated. The brakes were not used properly and the pads and fluid needed to be replaced sooner than necessary.',
+'The tire pressure on the car was found to be significantly low and the tires were showing signs of severe wear. The tires were not properly inflated and the tread wore down prematurely.',
+'The catalytic converter in the car was not functioning properly and did not meet emission standards. The converter was damaged by improper use of the engine and will need to be replaced.',
+'The spare tire in the car was found to be flat and in need of replacement. The tire was driven on while flat and caused irreparable damage.',
+'The transmission fluid in the car was found to be low and contaminated. The transmission was damaged by improper shifting and will need to be repaired or replaced.',
+'The radiator in the car was found to have a leak. The radiator was damaged by not properly maintaining the cooling system and will need to be repaired or replaced.',
+'The battery in the car was found to be dead and in need of replacement. The battery was drained by leaving the headlights on overnight.',
+'The air conditioning system in the car was not functioning properly. The system was damaged by using it while the car was not running and will need to be repaired.',
+'The fuel pump in the car was found to be malfunctioning. The fuel pump was damaged by running the car out of fuel and will need to be replaced.',
+'The front bumper of the car was found to be severely damaged and will need to be replaced. The hood was also dented and will need repair. The airbags deployed during the accident.',
+'The rear bumper of the car was found to be completely torn off and will need to be replaced. The trunk was also dented and will need repair. The taillights were broken and will need to be replaced.',
+'The drivers side door of the car was found to be severely damaged and will need to be replaced. The frame of the car was also bent and will need repair. The airbags deployed during the accident.',
+'The passenger side of the car was found to be severely damaged and will need extensive repair. The roof was also caved in and will need to be replaced. The airbags deployed during the accident.',
+'The front and rear of the car were both severely damaged and will need extensive repair. The frame of the car was also bent and will need straightening. The airbags deployed during the accident.',
+'The oil level in the car was found to be low and the oil filter was clogged. The engine was also making unusual noises and will need further inspection.',
+'The brakes on the car were found to be severely worn and the brake fluid was contaminated. The brake pads will need to be replaced and the brake lines will need to be flushed.',
+'The tire pressure on the car was found to be significantly low and the tires were showing signs of severe wear. The tires will need to be replaced as soon as possible.',
+'The catalytic converter in the car was not functioning properly and did not meet emission standards. The converter will need to be replaced in order to meet emission regulations.',
+'The spare tire in the car was found to be flat and in need of replacement. The other tires on the car were also showing signs of wear and will need to be replaced soon.',
+'The transmission fluid in the car was found to be low and contaminated. The transmission will need to be drained and refilled with fresh fluid.',
+'The radiator in the car was found to have a leak. The radiator will need to be repaired or replaced in order to properly cool the engine.',
+'The battery in the car was found to be dead and in need of replacement. The battery cables were also corroded and will need to be cleaned or replaced.',
+'The air conditioning system in the car was not functioning properly. The system will need to be inspected and repaired in order to function correctly.',
+'The fuel pump in the car was found to be malfunctioning. The fuel pump will need to be replaced in order to properly fuel the engine.',
+'The oil level in the car was found to be low and the oil filter was clogged. The oil change interval was not followed and the engine was damaged as a result.',
+'The brakes on the car were found to be severely worn and the brake fluid was contaminated. The brakes were not used properly and the pads and fluid needed to be replaced sooner than necessary.',
+'The tire pressure on the car was found to be significantly low and the tires were showing signs of severe wear. The tires were not properly inflated and the tread wore down prematurely.',
+'The catalytic converter in the car was not functioning properly and did not meet emission standards. The converter was damaged by improper use of the engine and will need to be replaced.',
+'The spare tire in the car was found to be flat and in need of replacement. The tire was driven on while flat and caused irreparable damage.',
+'The transmission fluid in the car was found to be low and contaminated. The transmission was damaged by improper shifting and will need to be repaired or replaced.',
+'The radiator in the car was found to have a leak. The radiator was damaged by not properly maintaining the cooling system and will need to be repaired or replaced.',
+'The battery in the car was found to be dead and in need of replacement. The battery was drained by leaving the headlights on overnight.',
+'The air conditioning system in the car was not functioning properly. The system was damaged by using it while the car was not running and will need to be repaired.',
+'The fuel pump in the car was found to be malfunctioning. The fuel pump was damaged by running the car out of fuel and will need to be replaced.',
+'The oil level in the car was found to be within the recommended range and the oil filter was in good condition. The engine is running smoothly.',
+'The brakes on the car were found to be in good condition and the brake fluid was clean. The brake pads have plenty of life left and the brake lines are clear.',
+'The tire pressure on the car was found to be within the recommended range and the tires are in good condition with plenty of tread. The wheels are also properly aligned.',
+'The catalytic converter in the car was functioning properly and met all emission standards. The converter is in good condition and operating efficiently.',
+'The spare tire in the car was found to be in good condition and properly inflated. All of the other tires on the car were also in good condition with plenty of tread.',
+'The transmission fluid in the car was found to be at the proper level and clean. The transmission is shifting smoothly.',
+'The radiator in the car was found to be in good condition and properly cooled the engine. The cooling system is functioning as designed.',
+'The battery in the car was found to be fully charged and in good condition. The battery cables are clean and properly connected.',
+'The air conditioning system in the car was found to be in good condition and cooling the interior effectively. The system is functioning as designed.',
+'The fuel pump in the car was found to be in good condition and delivering fuel to the engine effectively. The fuel system is functioning as designed.'
+]
+
+# Generate the INSERT INTO statements
+statements = []
+for i, (nrRaportit,nrEgzaminimit,kmParaprake) in enumerate(DorezimiVeturesNgaKlienti):
+    # Select a random row from the Vetura data
+    
+    kmTotaleVetures = kmParaprake + random.randint(100,5000)
+    gjendjaEVetures = random.choice(RaportetEgzaminuseLista)
+
+    # Generate an INSERT INTO statement
+
+
+    statement = f"INSERT INTO RaportiVeturesDorezuar (nrRaportit,nrEgzaminimit,kmTotaleVetures,raportiEgzaminimit) VALUES ({nrRaportit},{nrEgzaminimit},{kmTotaleVetures},'{gjendjaEVetures}')"
+    statements.append(statement)
+
+# Print the generated statements
+print('\n'.join(statements))
+
